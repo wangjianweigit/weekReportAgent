@@ -178,7 +178,7 @@ async function serveStaticFiles(ctx: any, next: any) {
   const pathname = url.pathname;
   
   if (pathname === "/") {
-    const file = await Deno.readTextFile("./public/index.html");
+    const file = await Deno.readTextFile("./index.html");
     ctx.response.headers.set("Content-Type", "text/html; charset=utf-8");
     ctx.response.body = file;
   } else if (pathname.startsWith("/static/")) {
